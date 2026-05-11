@@ -1,0 +1,130 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Project Preview Demo</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <main class="shell">
+      <section class="workspace" aria-label="项目成效预览器">
+        <aside class="intake">
+          <p class="kicker">GitHub public demo</p>
+          <h1>项目成效<br />预览器</h1>
+          <p class="summary">
+            输入少量项目信息，先看到前端雏形和简短开发方案。深入阶段可选择自主推进，或申请免费诊断并购买后续服务。
+          </p>
+
+          <form id="project-form" class="form">
+            <label>
+              项目类型
+              <select id="project-type">
+                <option>AI 工具 / 自动化系统</option>
+                <option>SaaS 平台</option>
+                <option>企业内部管理工具</option>
+                <option>内容 / 营销型网站</option>
+              </select>
+            </label>
+
+            <label>
+              当前阶段
+              <select id="stage">
+                <option>只有想法，需要整理 MVP</option>
+                <option>已有原型，需要开发方案</option>
+                <option>已有代码，需要诊断卡点</option>
+                <option>准备上线，需要部署交付</option>
+              </select>
+            </label>
+
+            <label>
+              目标用户
+              <input id="audience" type="text" value="中小团队负责人" />
+            </label>
+
+            <label>
+              主要目标
+              <input id="goal" type="text" value="快速验证需求并获得可演示版本" />
+            </label>
+
+            <button class="primary" type="submit">生成基础方案</button>
+          </form>
+        </aside>
+
+        <section class="preview" aria-live="polite">
+          <div class="topline">
+            <span>Preview</span>
+            <strong id="plan-status">基础方案待生成</strong>
+          </div>
+
+          <div class="prototype">
+            <div class="prototype-nav">
+              <span>Client Console</span>
+              <button type="button" aria-label="More actions">...</button>
+            </div>
+            <div class="prototype-grid">
+              <div>
+                <small>项目阶段</small>
+                <strong id="mock-stage">MVP 整理</strong>
+              </div>
+              <div>
+                <small>优先目标</small>
+                <strong id="mock-goal">验证需求</strong>
+              </div>
+              <div>
+                <small>交付方式</small>
+                <strong>诊断 + 方案 + 实施</strong>
+              </div>
+            </div>
+            <div class="timeline" id="timeline">
+              <div class="line done"><span></span>需求收集</div>
+              <div class="line active"><span></span>基础方案</div>
+              <div class="line locked"><span></span>完整路线图</div>
+              <div class="line locked"><span></span>实施交付</div>
+            </div>
+          </div>
+
+          <div class="output">
+            <h2>简短开发方案</h2>
+            <ul id="plan-list">
+              <li>填写左侧信息后生成基础方案。</li>
+              <li>公开 demo 仅展示项目雏形和简短路径。</li>
+              <li>完整架构、实施细节与生产保障保留为服务内容。</li>
+            </ul>
+          </div>
+
+          <div class="gate" id="gate" hidden>
+            <div>
+              <p class="gate-label">限制节点</p>
+              <h2>继续进入完整项目阶段</h2>
+              <p>
+                demo 已完成基础可视化和简短方案。后续复杂度、部署稳定性、错误定位和项目进程管理需要进一步诊断。
+              </p>
+            </div>
+            <div class="actions">
+              <button class="secondary" id="self-build" type="button">我将自主开发</button>
+              <button class="primary" id="contact-service" type="button">申请免费诊断</button>
+            </div>
+          </div>
+        </section>
+      </section>
+
+      <dialog id="decision-dialog">
+        <form method="dialog" class="dialog-body">
+          <button class="close" value="close" aria-label="Close">×</button>
+          <p class="kicker" id="dialog-kicker">下一步选择</p>
+          <h2 id="dialog-title">项目进程诊断</h2>
+          <p id="dialog-copy">
+            提交当前项目阶段、仓库或截图后，可获得一次免费诊断。诊断用于定位问题；具体解决方案、修复实施、部署上线和长期维护属于付费服务。
+          </p>
+          <div class="contact-box">
+            <span>建议收集信息</span>
+            <strong>项目类型、当前进度、卡点、期望交付时间、联系方式</strong>
+          </div>
+          <button class="primary" value="close">知道了</button>
+        </form>
+      </dialog>
+    </main>
+    <script src="./app.js"></script>
+  </body>
+</html>

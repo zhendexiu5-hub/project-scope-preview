@@ -1,0 +1,8 @@
+generated/
+docs/
+scripts/
+service-packages/
+*.tmp
+~$*.docx
+.DS_Store
+Thumbs.db
