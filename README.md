@@ -1,4 +1,4 @@
-# Project Preview Demo
+# ProjectScope Preview（项目成效预览器）
 
 一个轻量级项目预览 demo，用来快速体验“填写项目信息 -> 生成基础方案 -> 选择下一步”的流程。
 
